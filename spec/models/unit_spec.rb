@@ -14,10 +14,10 @@ RSpec.describe Unit, :type => :model do
 
   describe 'floor_plan validations' do
     it "allows VALID_FLOOR_PLANS type" do
-      expect(FactoryBot.build(floor_plan: VALID_FLOOR_PLANS.first)).to be_valid
+      expect(FactoryBot.build(:unit, floor_plan: Unit::VALID_FLOOR_PLANS.first)).to be_valid
     end
     it "invalid with other floor_plan type" do
-      expect(FactoryBot.build(floor_plan: 'hallway')).to_not be_valid
+      expect(FactoryBot.build(:unit, floor_plan: 'hallway')).to_not be_valid
     end
   end
 end
